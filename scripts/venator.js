@@ -20,6 +20,14 @@ const cardsData = [
   { name: "Card 18", password: "senhaCard18" },
 ];
 
+// Array de nomes para os cards - você pode personalizar os nomes aqui
+const cardNames = [
+  "Characters", "Card Especial 2", "Card VIP 3", "Card Top 4", "Card Exlusivo 5",
+  "Card Premium 6", "Card Secreto 7", "Card Master 8", "Card Ultimate 9", "Card Estelar 10",
+  "Card Espacial 11", "Card Supremo 12", "Card Magnífico 13", "Card Excepcional 14", "Card Extraordinário 15",
+  "Card Incrível 16", "Card Fantástico 17", "Card Mágico 18"
+];
+
 // Seleciona o container dos cards
 const cardContainer = document.querySelector(".card-container");
 
@@ -29,9 +37,9 @@ cardsData.forEach((cardData, index) => {
   const card = document.createElement("div");
   card.className = "card";
 
-  // Adiciona o conteúdo do card
+  // Substitui o nome do card com base no array cardNames
   card.innerHTML = `
-    <h2>${cardData.name}</h2>
+    <h2>${cardNames[index]}</h2>
     <input type="text" placeholder="Seu Nome">
     <input type="password" placeholder="Senha">
     <button onclick="checkPassword(${index}, this)">Verificar</button>
