@@ -1,0 +1,58 @@
+/* Corpo da página com fundo preto */
+body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Impede rolagem */
+}
+
+/* A frase com animação fade-in */
+.section-error {
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    animation: fadeIn 3s ease-out forwards;
+}
+
+/* Animação de fade-in */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* As imagens inicialmente estão escondidas */
+.container-img {
+    display: none;
+    text-align: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 25px; /* Ajuste para dar mais espaço entre a frase e as imagens */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Organiza as imagens em colunas responsivas */
+    gap: 20px; /* Espaço entre as imagens */
+    padding: 20px;
+}
+
+/* Estilo para as imagens */
+.container-img img {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    width: 210px; /* Tamanho das imagens ajustado para 200px de largura */
+    height: auto;  /* Mantém a proporção das imagens */
+    border-radius: 10px; /* Arredonda os cantos das imagens */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Adiciona sombra suave nas imagens */
+}
+
+/* Exibindo as imagens quando a classe 'visible' for adicionada */
+.container-img img.visible {
+    opacity: 1;
+}

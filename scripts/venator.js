@@ -22,10 +22,10 @@ const cardsData = [
 
 // Array de nomes para os cards - você pode personalizar os nomes aqui
 const cardNames = [
-  "Mind", "Intelligence", "Port 5500", "Soundtrack", "Sigils",
-  "The_Last_Home", "The_Signs", "Son_of_Fear", "Enigma", "Laboratory?",
-  "Kidnapped", "Objective", "Foreigner", "Memophilic", "FEARFEARFEAR",
-  "Other_side", "Admin", "Foreigner"
+  "Characters", "Xeno", "Port 5500", "Sound Track", "Sigils",
+  "The last home", "The signs", "Fear", "Enigma", "Chico",
+  "Kidnapped", "Angel", "Our god", "others", "elements",
+  "Salvation", "game settings", "Foreigner"
 ];
 
 // Seleciona o container dos cards
