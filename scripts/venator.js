@@ -1,31 +1,31 @@
 // Dados dos cards: nome e senha
 const cardsData = [
-  { name: "Card 1", password: "senhaCard1" },
-  { name: "Card 2", password: "senhaCard2" },
-  { name: "Card 3", password: "senhaCard3" },
-  { name: "Card 4", password: "senhaCard4" },
-  { name: "Card 5", password: "senhaCard5" },
-  { name: "Card 6", password: "senhaCard6" },
-  { name: "Card 7", password: "senhaCard7" },
-  { name: "Card 8", password: "senhaCard8" },
-  { name: "Card 9", password: "senhaCard9" },
-  { name: "Card 10", password: "senhaCard10" },
-  { name: "Card 11", password: "senhaCard11" },
-  { name: "Card 12", password: "senhaCard12" },
-  { name: "Card 13", password: "senhaCard13" },
-  { name: "Card 14", password: "senhaCard14" },
-  { name: "Card 15", password: "senhaCard15" },
-  { name: "Card 16", password: "senhaCard16" },
-  { name: "Card 17", password: "senhaCard17" },
-  { name: "Card 18", password: "senhaCard18" },
+  { name: "Mind", password: "Neural_Connector" },
+  { name: "Intelligence", password: "75" },
+  { name: "Port_5500", password: "The_Dark_Side" },
+  { name: "Soundtrack", password: "Harmony808" },
+  { name: "Sigils", password: "Voices" },
+  { name: "The_Last_Home", password: "Acceptance" },
+  { name: "The_Signs", password: "The_Unknown_Fate" },
+  { name: "Son_of_Fear", password: "Enigma_of_Fear" },
+  { name: "Enigma", password: "Scripts" },
+  { name: "Laboratory?", password: "Shot_in_the_Shoulder" },
+  { name: "Kidnapped", password: "floor3" },
+  { name: "Objective", password: "what_you_know" },
+  { name: "Foreigner", password: "The_city" },
+  { name: "Memophilic", password: "Fummu" },
+  { name: "FEARFEARFEAR", password: "blood_death_knowledge_energy" },
+  { name: "Other_side", password: "You_will_come_back" },
+  { name: "Admin", password: "12112112" },
+  { name: "Foreigner", password: "We_are_all_one" }
 ];
 
 // Array de nomes para os cards - você pode personalizar os nomes aqui
 const cardNames = [
-  "Characters", "Xeno", "Port 5500", "Sound Track", "Sigils",
-  "The last home", "The signs", "Fear", "Enigma", "Chico",
-  "Kidnapped", "Angel", "Our god", "Card Excepcional 14", "Card Extraordinário 15",
-  "Salvation", "Card Fantástico 17", "Foreigner"
+  "Mind", "Intelligence", "Port 5500", "Soundtrack", "Sigils",
+  "The_Last_Home", "The_Signs", "Son_of_Fear", "Enigma", "Laboratory?",
+  "Kidnapped", "Objective", "Foreigner", "Memophilic", "FEARFEARFEAR",
+  "Other_side", "Admin", "Foreigner"
 ];
 
 // Seleciona o container dos cards
@@ -56,12 +56,21 @@ function checkPassword(cardIndex, button) {
   const passwordInput = card.querySelector("input[type='password']").value;
   const messageDiv = card.querySelector(".message");
 
-  // Verifica se a senha está correta
-  if (passwordInput === cardsData[cardIndex].password) {
-    // Redireciona para o arquivo correspondente na pasta "cards-pages"
-    window.location.href = `cards-pages/${cardIndex + 1}.html`;
-  } else {
+  // Se a senha estiver incorreta
+  if (passwordInput !== cardsData[cardIndex].password) {
+    // Adiciona a animação de vibração
+    card.classList.add("vibrate");
+
     messageDiv.textContent = "Senha incorreta!";
     messageDiv.style.color = "red";
+
+    // Remove a animação de vibração após 1 segundo
+    setTimeout(() => {
+      card.classList.remove("vibrate");
+    }, 1000); // O tempo de vibração pode ser ajustado aqui
+
+  } else {
+    // Se a senha estiver correta, redireciona para o arquivo correspondente na pasta "cards-pages"
+    window.location.href = `cards-pages/${cardIndex + 1}.html`;
   }
 }

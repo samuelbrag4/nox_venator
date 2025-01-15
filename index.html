@@ -10,12 +10,24 @@
   <h1>Shadowfall Studios</h1>
   <div class="login-container">
     <form id="login-form">
-      <h2>Nox Venator System</h2>
-      <label for="password">Senha:</label>
+      <h1>Nox Venator System</h1>
       <input type="password" id="password" name="password" required>
-      <button type="submit">Entrar</button>
+      <button type="submit">ENTRAR</button>
     </form>
   </div>
+  <script>
+    function triggerError() {
+      document.body.classList.add('error', 'scroll-down');
+      
+      // Remove as classes após 10 segundos
+      setTimeout(() => {
+        document.body.classList.remove('error', 'scroll-down');
+      }, 1000);
+    }
+
+    // Simula um erro após 2 segundos
+    setTimeout(triggerError, 2000);
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
