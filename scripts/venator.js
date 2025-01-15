@@ -22,10 +22,10 @@ const cardsData = [
 
 // Array de nomes para os cards - você pode personalizar os nomes aqui
 const cardNames = [
-  "Characters", "Card Especial 2", "Card VIP 3", "Card Top 4", "Card Exlusivo 5",
-  "Card Premium 6", "Card Secreto 7", "Card Master 8", "Card Ultimate 9", "Card Estelar 10",
-  "Card Espacial 11", "Card Supremo 12", "Card Magnífico 13", "Card Excepcional 14", "Card Extraordinário 15",
-  "Card Incrível 16", "Card Fantástico 17", "Card Mágico 18"
+  "Characters", "Xeno", "Port 5500", "Sound Track", "Sigils",
+  "The last home", "The signs", "Fear", "Enigma", "Chico",
+  "Kidnapped", "Angel", "Our god", "Card Excepcional 14", "Card Extraordinário 15",
+  "Salvation", "Card Fantástico 17", "Foreigner"
 ];
 
 // Seleciona o container dos cards
