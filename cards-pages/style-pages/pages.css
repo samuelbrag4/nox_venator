@@ -287,3 +287,35 @@ button:hover {
     opacity: 0.5;
     pointer-events: none;  /* Evita que a mensagem interfira com o clique do link */
 }
+
+.card-random {
+    width: 500px;
+    color: #39FF14;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: monospace;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.random-text {
+    position: absolute;
+    font-size: 30px;
+    opacity: 0;
+    animation: blink 0.2s linear infinite; /* Acelerando o piscar */
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

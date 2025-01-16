@@ -14,20 +14,59 @@
             <h1>Você não devia estar aqui</h1>
         </section>
         <section class="container-img">
-            <img src="/img/estrangeiro.png">
-            <img src="/img/estrangeiro_caderno.png">
-            <img src="/img/the_local.png">
-            <img src="/img/estrangeiro_ficha.png">
-            <img src="/img/estrangeiro_chegada.png">
-            <img src="/img/estrangeiro_carregando.png">
-            <img src="/img/signals.png">
-            <img src="/img/estrandeiro_mato.png">
-            <img src="/img/estrangas.png">
-            <img src="/img/tenebris.png">
+            <article>
+                <div class="card-random" id="randomCard">
+                    <!-- O conteúdo será gerado pelo JS -->
+                </div>
+            </article>            
         </section>
     </main>
 
     <!-- Referência ao JavaScript dentro de script-pages -->
     <script src="/cards-pages/script-pages/pages.js"></script>
+
+    <script>
+        const card = document.getElementById("randomCard");
+    
+        const phrases = [
+            "Aqui é o último combate", "Vocês vão morrer", "O ritual de medo será concluído", 
+            "Quem eu sou?", "Morte", "Estrangeiro", "Conhecimento", "Medo", "Sangue", 
+            "Energia", "Combate final", "Os outros não morreram", 
+            "Passar pelos outros para chegar aqui", "Eu sou o fim", 
+            "Vou entrar na mente de vocês", "Outro lado", "Isso não é um simples jogo", 
+            "Página 242", "Nox Venator", "Fim", "Xeno",
+            "Todos vão pagar", "Não há saída", "O tempo está se esgotando", 
+            "O jogo acabou para todos", "Eles não sabem o que os espera", "O poder é meu", 
+            "O medo vai controlar", "A dor será infinita", "A cidade não os receberá", 
+            "Este é o fim", "O medo nos une", "Prepare-se para a verdade", 
+            "A morte é certa", "Você não pode escapar"
+        ];
+    
+        const numOfElements = 40; // Aumentei o número de frases
+    
+        // Função para gerar e adicionar as frases no card
+        function generateRandomText() {
+            // Apaga qualquer texto anterior
+            card.innerHTML = '';
+    
+            // Cria múltiplas frases com posições e animações aleatórias
+            for (let i = 0; i < numOfElements; i++) {
+                const randomText = document.createElement('div');
+                randomText.classList.add('random-text');
+                randomText.innerText = phrases[Math.floor(Math.random() * phrases.length)];
+    
+                // Posiciona aleatoriamente dentro do card
+                randomText.style.top = `${Math.random() * 100}%`;
+                randomText.style.left = `${Math.random() * 100}%`;
+                randomText.style.animationDuration = `${Math.random() * 1 + 1}s`; // A velocidade da animação será de 1 a 2 segundos
+    
+                // Adiciona o novo elemento ao card
+                card.appendChild(randomText);
+            }
+        }
+    
+        // Gera o texto aleatório a cada 500ms (diminuí a frequência da geração)
+        setInterval(generateRandomText, 500); // Menos frequência de novos caracteres
+    </script>
 </body>
 </html>

@@ -14,20 +14,64 @@
             <h1>Você não devia estar aqui</h1>
         </section>
         <section class="container-img">
-            <img src="/img/estrangeiro.png">
-            <img src="/img/estrangeiro_caderno.png">
-            <img src="/img/the_local.png">
-            <img src="/img/estrangeiro_ficha.png">
-            <img src="/img/estrangeiro_chegada.png">
-            <img src="/img/estrangeiro_carregando.png">
-            <img src="/img/signals.png">
-            <img src="/img/estrandeiro_mato.png">
-            <img src="/img/estrangas.png">
-            <img src="/img/tenebris.png">
+            <article>
+                <div class="card-random" id="randomCard">
+                    <!-- O conteúdo será gerado pelo JS -->
+                </div>
+            </article>
         </section>
     </main>
 
     <!-- Referência ao JavaScript dentro de script-pages -->
     <script src="/cards-pages/script-pages/pages.js"></script>
+
+    <script>
+        const card = document.getElementById("randomCard");
+    
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        const words = [
+            "estrangeiro", "tenebris", "saber", "perder", "local", "jogo", "sigilos", 
+            "rituais", "sangue", "morte", "medo", "conhecimento", "energia", "alheios", 
+            "Angel", "Chico", "Fernanda", "Daniel", "Natalia", "Pedro", "Vitor", "Nicolas"
+        ];
+    
+        const numOfElements = 100; // Aumentei o número de caracteres
+    
+        // Função para gerar caracteres aleatórios
+        function getRandomCharacter() {
+            const randomIndex = Math.floor(Math.random() * characters.length);
+            return characters[randomIndex];
+        }
+    
+        // Função para gerar palavras aleatórias a partir da lista
+        function getRandomWord() {
+            const randomIndex = Math.floor(Math.random() * words.length);
+            return words[randomIndex];
+        }
+    
+        // Função para gerar e adicionar os caracteres no card
+        function generateRandomText() {
+            // Apaga qualquer texto anterior
+            card.innerHTML = '';
+    
+            // Cria múltiplos caracteres e palavras com posições e animações aleatórias
+            for (let i = 0; i < numOfElements; i++) {
+                const randomText = document.createElement('div');
+                randomText.classList.add('random-text');
+                randomText.innerText = Math.random() > 0.5 ? getRandomCharacter() : getRandomWord(); // 50% chance de ser palavra ou letra
+    
+                // Posiciona aleatoriamente dentro do card
+                randomText.style.top = `${Math.random() * 100}%`;
+                randomText.style.left = `${Math.random() * 100}%`;
+                randomText.style.animationDuration = `${Math.random() * 0.3 + 0.1}s`; // Aumentei a velocidade da animação
+    
+                // Adiciona o novo elemento ao card
+                card.appendChild(randomText);
+            }
+        }
+    
+        // Gera o texto aleatório a cada 100ms (velocidade aumentada)
+        setInterval(generateRandomText, 100); // Mais rápido gerando novos caracteres
+    </script>
 </body>
 </html>
