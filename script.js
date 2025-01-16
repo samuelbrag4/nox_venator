@@ -6,7 +6,7 @@ document.getElementById("login-form").addEventListener("submit", function (event
     const passwordInput = document.getElementById("password").value;
   
     // Define a senha correta
-    const correctPassword = "12345";
+    const correctPassword = "Altherion_Labs_Data";
   
     // Verifica se a senha está correta
     if (passwordInput === correctPassword) {
