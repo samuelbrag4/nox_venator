@@ -7,7 +7,7 @@ const cardsData = [
   { name: "Sigils", password: "Voices" },
   { name: "The_Last_Home", password: "Acceptance" },
   { name: "The_Signs", password: "The_Unknown_Fate" },
-  { name: "Son_of_Fear", password: "Enigma_of_Fear" },
+  { name: "Son_of_Fear", password: "Son_of_Fear" },
   { name: "Enigma", password: "Scripts" },
   { name: "Laboratory?", password: "Shot_in_the_Shoulder" },
   { name: "Kidnapped", password: "floor3" },

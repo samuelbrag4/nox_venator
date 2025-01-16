@@ -14,20 +14,54 @@
             <h1>Você não devia estar aqui</h1>
         </section>
         <section class="container-img">
-            <img src="/img/estrangeiro.png">
-            <img src="/img/estrangeiro_caderno.png">
-            <img src="/img/the_local.png">
-            <img src="/img/estrangeiro_ficha.png">
-            <img src="/img/estrangeiro_chegada.png">
-            <img src="/img/estrangeiro_carregando.png">
-            <img src="/img/signals.png">
-            <img src="/img/estrandeiro_mato.png">
-            <img src="/img/estrangas.png">
-            <img src="/img/tenebris.png">
+            <article class="enigma-card">
+                <div class="enigma-content">
+                    <h1>Port_5500 - Enigma</h1>
+                    <p>Você está prestes a resolver um enigma. A frase inicial é:</p>
+                    <p id="original-text">A cidade Impossível se chama Tenebris</p>
+            
+                    <p>Após passar por diversos filtros, você precisará descobrir como a palavra se transforma. Aplique a lógica de transformação abaixo.</p>
+            
+                    <pre id="enigma-code">
+                        let phrase = "A cidade Impossível se chama Tenebris";
+                        let filter1 = phrase.replace("cidade", "Son_of_Fear");
+                        let filter2 = filter1.replace("Impossível", "Fear");
+                        let filter3 = filter2.replace("Tenebris", "FEAR");
+                        let finalPhrase = filter3.toUpperCase();
+                    </pre>
+            
+                    <p>Digite a palavra final após passar pelos filtros:</p>
+                    <input type="text" id="user-input" placeholder="Digite a palavra final">
+                    <button onclick="checkEnigma()">Verificar</button>
+            
+                    <div id="result-message"></div>
+                </div>
+            </article>
         </section>
     </main>
 
     <!-- Referência ao JavaScript dentro de script-pages -->
     <script src="/cards-pages/script-pages/pages.js"></script>
+    <script>
+        // Função para verificar se a palavra final está correta
+        function checkEnigma() {
+            // A palavra final correta após os filtros
+            const correctPhrase = "SON_OF_FEAR";
+
+            // Pega a palavra digitada pelo usuário
+            const userInput = document.getElementById('user-input').value.trim().toUpperCase();
+
+            // Verifica se a palavra está correta
+            const resultMessage = document.getElementById('result-message');
+
+            if (userInput === correctPhrase) {
+                resultMessage.textContent = "Senha: SON_OF_FEAR adquirida!";
+                resultMessage.className = 'success';
+            } else {
+                resultMessage.textContent = "Senha incorreta. Tente novamente.";
+                resultMessage.className = 'error';
+            }
+        }
+    </script>
 </body>
 </html>

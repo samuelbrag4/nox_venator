@@ -151,3 +151,99 @@ a:hover {
 .chat p strong {
     color: #cddc39; /* Verde amarelado */
 }
+
+.enigma-card {
+    background-color: #333;
+    color: #f1f1f1;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+    width: 50%;
+    margin: 30px auto;
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+}
+
+.enigma-card h1 {
+    color: #00e676;
+    font-size: 25px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.enigma-card p {
+    font-size: 13px;
+    line-height: 1;
+    margin-bottom: 10px;
+    color: #b0b0b0;
+}
+
+#enigma-code {
+    background-color: #1d1d1d;
+    color: #00e676;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: 'Courier New', Courier, monospace;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+#user-input {
+    padding: 15px;
+    width: 50%;
+    font-size: 20px;
+    border: 2px solid #00e676;
+    border-radius: 8px;
+    background-color: #2a2a2a;
+    color: #fff;
+    margin-bottom: 20px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+#user-input:focus {
+    border-color: #ffeb3b;
+    background-color: #333;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: #00e676;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #2b7a0b;
+}
+
+#result-message {
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #f44336;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+#result-message.success {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+#result-message.error {
+    background-color: #f44336;
+    color: #fff;
+}
