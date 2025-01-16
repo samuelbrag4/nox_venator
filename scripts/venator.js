@@ -2,7 +2,7 @@
 const cardsData = [
   { name: "Mind", password: "Neural_Connector" },
   { name: "Intelligence", password: "75" },
-  { name: "Port_5500", password: "The_Dark_Side" },
+  { name: "Port_5500", password: "End" },
   { name: "Soundtrack", password: "Harmony808" },
   { name: "Sigils", password: "Voices" },
   { name: "The_Last_Home", password: "Acceptance" },
@@ -25,7 +25,7 @@ const cardNames = [
   "Characters", "Xeno", "Port 5500", "Sound Track", "Sigils",
   "The last home", "The signs", "Fear", "Enigma", "Chico",
   "Kidnapped", "Angel", "Our god", "others", "elements",
-  "Salvation", "game settings", "Foreigner"
+  "passwords", "game settings", "Foreigner"
 ];
 
 // Seleciona o container dos cards
