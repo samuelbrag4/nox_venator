@@ -247,3 +247,43 @@ button:hover {
     background-color: #f44336;
     color: #fff;
 }
+
+.card-link {
+    background-color: #222;
+    color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;  /* Para posicionar o elemento escondido */
+    transition: transform 0.3s ease;
+}
+
+.card-link:hover {
+    transform: scale(1.05);
+}
+
+.card-link h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.card-link a {
+    text-decoration: none;
+    color: #1DB954;  /* Spotify green */
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.card-link a:hover {
+    text-decoration: underline;
+}
+
+.hidden-message {
+    bottom: 10px;
+    right: 10px;
+    font-size: 14px;
+    color: #292929;
+    opacity: 0.5;
+    pointer-events: none;  /* Evita que a mensagem interfira com o clique do link */
+}
