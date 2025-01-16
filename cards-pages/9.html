@@ -7,6 +7,80 @@
 
     <!-- Referência ao CSS dentro de style-pages -->
     <link rel="stylesheet" href="/cards-pages/style-pages/pages.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #222;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            width: 80%;
+            max-width: 600px;
+            background-color: #333;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.7);
+        }
+
+
+        #output {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #444;
+            border-radius: 5px;
+            min-height: 100px;
+            font-size: 16px;
+            overflow-y: auto;
+        }
+
+        #inputArea {
+            margin-top: 20px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            width: 60%;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #555;
+            background-color: #222;
+            color: white;
+        }
+
+        button {
+            padding: 10px;
+            font-size: 16px;
+            background-color: #02491d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #034621;
+        }
+
+        #image-container {
+            display: none; /* Inicialmente escondido */
+            margin-top: 20px;
+        }
+
+        img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
     <main>
@@ -14,20 +88,79 @@
             <h1>Você não devia estar aqui</h1>
         </section>
         <section class="container-img">
-            <img src="/img/estrangeiro.png">
-            <img src="/img/estrangeiro_caderno.png">
-            <img src="/img/the_local.png">
-            <img src="/img/estrangeiro_ficha.png">
-            <img src="/img/estrangeiro_chegada.png">
-            <img src="/img/estrangeiro_carregando.png">
-            <img src="/img/signals.png">
-            <img src="/img/estrandeiro_mato.png">
-            <img src="/img/estrangas.png">
-            <img src="/img/tenebris.png">
+            <div class="container">
+                <h1>Nox Venator</h1>
+                <div id="output">Conexão é possível?</div>
+                <div id="inputArea">
+                    <input type="text" id="commandInput" placeholder="Fale comigo">
+                    <button onclick="executeCommand()">></button>
+                </div>
+                <div id="image-container">
+                    <img src="/img/estrangeiro_carregando.png" alt="Imagem do jogo">
+                </div>
+            </div>
         </section>
     </main>
 
     <!-- Referência ao JavaScript dentro de script-pages -->
     <script src="/cards-pages/script-pages/pages.js"></script>
+
+    <script>
+        let stage = 1;
+
+        function updateOutput(message) {
+            const output = document.getElementById('output');
+            output.innerHTML = `<p>${message}</p>`;
+        }
+
+        function executeCommand() {
+            const command = document.getElementById('commandInput').value.toLowerCase().trim();
+            document.getElementById('commandInput').value = ''; // Limpar o campo de input
+
+            switch(stage) {
+                case 1: // Primeira pergunta "Deseja se conectar?"
+                    if (command === "sim") {
+                        stage = 2;
+                        updateOutput("Destino seu onde? (Digite 'Fim' ou 'Inicio')");
+                    } else if (command === "não") {
+                        updateOutput("-5 de sanidade");
+                    } else {
+                        updateOutput("ME DE A RESPOSTA QUE EU QUERO! (DIGITE 'Sim' OU 'Não')");
+                    }
+                    break;
+
+                case 2: // Segunda pergunta "Para onde quer ir?"
+                    if (command === "fim") {
+                        stage = 3;
+                        updateOutput("O que é pior do que a dor e a morte? (Digite 'A falta de conhecimento' ou 'Tenebris')");
+                    } else if (command === "inicio") {
+                        updateOutput("-4 DE SANIDADE");
+                    } else {
+                        updateOutput("VOCE NÃO CONSEGUE FAZER ISSO?! Digite 'Fim' ou 'Inicio'.");
+                    }
+                    break;
+
+                case 3: // Terceira pergunta "O que é pior do que a dor e a morte?"
+                    if (command === "a falta de conhecimento") {
+                        updateOutput("NÃO É ISSO! -12 DE SANIDADE");
+                    } else if (command === "tenebris") {
+                        updateOutput("Desconectando...");
+                        setTimeout(() => {
+                            updateOutput("Iniciando Conexão com Alheio...");
+                            // Exibir imagem após a mensagem "Iniciando Conexão com Alheio"
+                            setTimeout(() => {
+                                document.getElementById('image-container').style.display = 'block'; // Mostrar a imagem
+                            }, 1000); // A imagem aparecerá após 1 segundo
+                        }, 2000); // "Desconectando..." será exibido por 2 segundos antes de continuar
+                    } else {
+                        updateOutput("...");
+                    }
+                    break;
+
+                default:
+                    updateOutput("Erro desconhecido. Por favor, reinicie o jogo.");
+            }
+        }
+    </script>
 </body>
 </html>
