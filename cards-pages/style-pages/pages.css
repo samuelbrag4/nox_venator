@@ -56,3 +56,54 @@ body {
 .container-img img.visible {
     opacity: 1;
 }
+
+/* Container dos cards */
+.characters-container {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+article {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.character-card {
+    background-color: #03310d79;
+    border: 3px solid #042901;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    color: #fff; /* Cor do texto */
+    font-family: 'Roboto Mono', 'Courier New', monospace; /* Fonte estilo robô */
+}
+
+.character-card:hover {
+    transform: scale(1.05); /* Aumenta o tamanho do card ao passar o mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais intensa ao passar o mouse */
+}
+
+h1 {
+    font-size: 1.5em;
+    margin: 10px 0;
+}
+
+p {
+    font-size: 1em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #29382b;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #042b0a;
+}
